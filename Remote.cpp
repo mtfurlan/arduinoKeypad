@@ -1,7 +1,14 @@
-/*
-  Remote.cpp
-
-TODO: license stuff
+/**
+ * Remote.cpp
+ *
+ * Author: Mark Furland <mtfurlan@mtu.edu>
+ * 2016-07-10
+ *
+ * Adapted code from Stefan Jones at
+ *	http://stefanjones.ca/blog/arduino-leonardo-remote-multimedia-keys/
+ *
+ * Refactored given code intended for modifying the android libraries to
+ *  a stand alone library for arduino 1.6.9
 */
 
 #include "Remote.h"
