@@ -14,16 +14,29 @@ void pausePlay();
 void nothing();
 
 //So this is an array of function pointers. This way, you can assign keys to functions easily.
-void (*button_functions[])() = {&volDown, &volUp, &nothing, &nothing, &nothing, &pausePlay};
+void (*button_functions[])() = {&volDown, &volUp, &nothing, &hackADay, &boss, &pausePlay};
 
-void science() {
+void hackADay() {
   //Windows only, is example of keyboard stuff
-  Keyboard.press(131);
+  Keyboard.press(KEY_RIGHT_GUI);
   Keyboard.press('r');
   delay(10);
   Keyboard.releaseAll();
   delay(100);
-  Keyboard.println("firefox http://xkcd.com/683/");
+  Keyboard.println("chrome http://hackaday.com/");
+
+  Keyboard.press(KEY_RETURN);
+  Keyboard.releaseAll();
+}
+
+void boss(){
+  Keyboard.press(KEY_ESC);
+  Keyboard.releaseAll();
+
+  Keyboard.press(KEY_LEFT_ALT);
+  Keyboard.press(KEY_TAB);
+  delay(10);
+  Keyboard.releaseAll();
 }
 
 void nothing() {
