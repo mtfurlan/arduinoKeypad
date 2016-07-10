@@ -1,4 +1,8 @@
-const int button_pins[] = {2,3,4,5,6,7};//Set what pins you are using here.
+#include <Keyboard.h>
+#include "Remote.h"
+
+
+const int button_pins[] = {10,14,15,9,7,5};//Set what pins you are using here.
 int button_state[] = {1,1,1,1,1,1};
 int button_state_last[] = {1,1,1,1,1,1};
 int debounce[] = {0,0,0,0,0,0};
