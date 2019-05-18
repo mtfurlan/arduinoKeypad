@@ -67,7 +67,15 @@ static const uint8_t _hidReportDescriptor[] PROGMEM = {
     0x95, 0x01,                    //	Report Count (1)
     0x81, 0x06,                    //	Input (Data, Variable, Relative)
 
-    0x95, 0x06,                    //	Report Count (6) Number of bits remaining in byte
+    0x09, 0x32,                    // Usage (Sleep)
+    0x95, 0x01,                    // Report Count (1)
+    0x81, 0x06,                    // Input (Data, Variable, Relative)
+
+    0x09, 0x30,                    // Usage (Power)
+    0x95, 0x01,                    // Report Count (1)
+    0x81, 0x06,                    // Input (Data, Variable, Relative)
+
+    0x95, 0x04,                    //	Report Count (4) Number of bits remaining in byte
     0x81, 0x07,                    //	Input (Constant, Variable, Relative)
     0xc0                           //	End Collection
 };
@@ -164,6 +172,22 @@ void Remote_::rewind(void)
 	m[0] = 0;
 	m[1] = REMOTE_REWIND >> 8;
 	HID().SendReport(4,m,2);
+}
+
+void Remote_::sleep(void)
+{
+  u8 m[2];
+  m[0] = 0;
+  m[1] = REMOTE_SLEEP >> 8;
+  HID().SendReport(4,m,2);
+}
+
+void Remote_::power(void)
+{
+  u8 m[2];
+  m[0] = 0;
+  m[1] = REMOTE_POWER >> 8;
+  HID().SendReport(4,m,2);
 }
 
 void Remote_::clear(void)
