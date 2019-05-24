@@ -65,9 +65,9 @@ public:
 	void forward(void);
 	void rewind(void);
 
-  // Power
-  void sleep(void);
-  void power(void);
+	// Power
+	void sleep(void);
+	void power(void);
   
 	// Send an empty report to prevent repeated actions
 	void clear(void);
