@@ -38,7 +38,8 @@
 #define REMOTE_PREVIOUS 128
 #define REMOTE_FAST_FORWARD 256
 #define REMOTE_REWIND 512
-
+#define REMOTE_SLEEP 1024
+#define REMOTE_POWER 2048
 
 class Remote_
 {
@@ -64,6 +65,10 @@ public:
 	void forward(void);
 	void rewind(void);
 
+	// Power
+	void sleep(void);
+	void power(void);
+  
 	// Send an empty report to prevent repeated actions
 	void clear(void);
 };
